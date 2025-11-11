@@ -1,0 +1,29 @@
+review:
+  enable: true
+  summarize_findings: true
+  inline_suggestions: true
+
+rules:
+  code_style: standard
+  prefer_pure_functions: true
+  require_tests:
+    enabled: true
+    threshold_changed_lines: 5
+  security:
+    enabled: true
+    severity_threshold: medium
+
+language_models:
+  default: "gpt-4-class"
+
+files:
+  include:
+    - "src/**/*.py"
+    - "src/**/*.js"
+    - "tests/**/*.py"
+  exclude:
+    - "**/*.min.js"
+
+comments:
+  tone: constructive
+  max_comments: 40
