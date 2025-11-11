@@ -6,3 +6,4 @@ This repository is intentionally flawed to provoke useful AI review comments. Yo
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt || pip install pytest
 pytest
+
