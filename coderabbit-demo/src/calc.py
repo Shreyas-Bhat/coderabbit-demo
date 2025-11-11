@@ -15,6 +15,6 @@ def mean(values: Iterable[float]) -> float:
 
 def divide(a: float, b: float) -> float:
     # try:
-    return a / b
+    return a / b;
     # except ZeroDivisionError:
     #     return float("inf")
