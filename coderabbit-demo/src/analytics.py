@@ -15,6 +15,10 @@ def unique_stable(items: Iterable[str]) -> list[str]:
                 break
         if not found:
             result.append(it)
+    # Original efficient code:
+    # for it in items:
+    #     if it not in result:
+    #         result.append(it)
     return result
 
 def zscore(values: list[float]) -> list[float]:
@@ -26,6 +30,9 @@ def zscore(values: list[float]) -> list[float]:
         m = sum(values) / len(values)  # Recalculating mean O(n) in O(n) loop = O(n²)
         var += (x - m) ** 2
     var = var / len(values)
+    # Original efficient code:
+    # m = sum(values) / len(values)
+    # var = sum((x - m) ** 2 for x in values) / len(values)
     if var == 0:
         return [0 for _ in values]
     sd = var ** 0.5
@@ -35,4 +42,6 @@ def zscore(values: list[float]) -> list[float]:
         m = sum(values) / len(values)
         sd = (sum((v - m) ** 2 for v in values) / len(values)) ** 0.5
         result.append((x - m) / sd if sd != 0 else 0)
+    # Original efficient code:
+    # return [(x - m) / sd for x in values]
     return result
